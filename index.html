@@ -65,21 +65,22 @@
     패키지: <strong>com.kyungsukim.z60</strong><br>
     개발자: <strong>Kim, Kyung Su (김경수)</strong> &nbsp;·&nbsp;
     문의: <strong>gyibrush@gmail.com</strong><br>
-    시행일: <strong>2026년 10월 15일</strong> &nbsp;·&nbsp; 최종 개정: <strong>2026년 10월 15일</strong>
+    시행일: <strong>2026년 10월 15일</strong> &nbsp;·&nbsp; 최종 개정: <strong>2026년 11월 3일</strong>
   </p>
   <p class="lede">
     이 앱은 개인정보를 <strong>수집하지 않습니다.</strong> 모든 계산은 이용자의 기기 안에서만 이루어지며,
     입력한 정보와 저장한 명식(命式)은 기기를 벗어나 개발자에게 전송되지 않습니다.
+    이용자가 클라우드 저장을 켜면 그 내용은 이용자 본인의 Google Drive 또는 OneDrive로만 저장됩니다(3절).
   </p>
 </header>
 
 <h2><span class="num">1.</span>한눈에 보기</h2>
 <table class="table">
   <tr><th>수집하는 개인정보</th><td>없음. 개발자는 이용자의 어떤 개인정보도 수집·저장·전송하지 않습니다.</td></tr>
-  <tr><th>데이터 처리 위치</th><td>전적으로 기기 내부. 외부 서버로 전송되는 데이터가 없습니다.</td></tr>
-  <tr><th>제3자 공유</th><td>없음.</td></tr>
+  <tr><th>데이터 처리 위치</th><td>기기 내부. 이용자가 클라우드 저장을 켠 경우에만 이용자 본인의 Google Drive · OneDrive 앱 전용 폴더로 보냅니다(개발자 서버는 거치지 않음).</td></tr>
+  <tr><th>제3자 공유</th><td>없음. 클라우드 저장은 이용자가 고른 이용자 본인 계정에 저장하는 것입니다.</td></tr>
   <tr><th>광고·분석 도구</th><td>없음. 광고 SDK, 추적·분석 도구를 넣지 않았습니다.</td></tr>
-  <tr><th>결제 정보</th><td>개발자가 다루지 않음. 평생 이용권 결제는 Google Play(스토어)가 처리합니다.</td></tr>
+  <tr><th>결제 정보</th><td>개발자가 다루지 않음. 평생 이용권 결제는 스토어(Google Play · Microsoft Store)가 처리합니다.</td></tr>
   <tr><th>만 14세 미만</th><td>아동을 대상으로 하지 않는 앱입니다(이용 등급 성인 대상).</td></tr>
 </table>
 
@@ -87,7 +88,7 @@
 <p>
   ℤ60 Tertius Interveniens는 사주 명리 계산 도구입니다. 이용자가 <strong>생년월일시·성별·장소</strong> 등을
   직접 입력하면 앱은 그 값으로 사주 원국과 운(대운·세운·월운)을 계산합니다. 입력한 값과 이용자가
-  저장한 명식은 <strong>오직 이용자의 기기 저장소 안에만</strong> 보관됩니다.
+  저장한 명식은 <strong>이용자의 기기 저장소 안에</strong> 보관됩니다. 이용자가 클라우드 저장을 켠 경우는 3절과 같습니다.
 </p>
 <ul>
   <li>입력·저장 정보는 개발자 서버로 <strong>전송되지 않습니다.</strong> 애초에 개발자는 데이터를 받는 서버를 운영하지 않습니다.</li>
@@ -95,7 +96,21 @@
   <li>저장한 명식은 이용자가 앱 안에서 직접 지우거나, 앱을 삭제하면 함께 사라집니다.</li>
 </ul>
 
-<h2><span class="num">3.</span>AI 운세풀이 기능과 클립보드</h2>
+<h2><span class="num">3.</span>클라우드 저장(선택 기능)</h2>
+<p>
+  1.33.0부터 평생 이용권의 윈도우 · 안드로이드 앱에서는 이용자가 직접 켜는 경우에 한해, 저장된 명식 · 가족 묶음 · 캘린더 메모를
+  이용자가 고른 <strong>이용자 본인의 Google Drive 또는 OneDrive</strong>에 파일 하나(<code>z60_myeong.json</code>)로 저장하고 다른 기기에서 불러올 수 있습니다.
+</p>
+<ul>
+  <li><strong>저장되는 곳:</strong> Google Drive는 이용자와 다른 앱에 보이지 않는 앱 전용 데이터 폴더, OneDrive는 「앱」 폴더 아래의 이 앱 전용 폴더입니다. 파일은 기기와 그 계정 사이에서만 오가며 <strong>개발자 서버를 거치지 않고</strong>, 개발자는 그 파일을 볼 수 없습니다.</li>
+  <li><strong>요청하는 권한:</strong> Google에는 앱 전용 데이터 폴더 권한(drive.appdata), Microsoft에는 앱 전용 폴더 권한(Files.ReadWrite.AppFolder)과 로그인 유지(offline_access)만 요청합니다. 앱은 이용자의 다른 파일을 읽거나 바꿀 수 없고, 계정의 이메일이나 프로필도 받지 않습니다.</li>
+  <li><strong>로그인 정보:</strong> 로그인은 각 회사의 로그인 화면(시스템 브라우저 또는 Google Play 서비스)에서 이루어지며, 앱은 비밀번호를 받지 않습니다. 다시 로그인하지 않아도 되도록 받은 토큰은 기기의 보안 저장소(윈도우 DPAPI · 안드로이드 키 저장소)로 잠가 기기 안에만 둡니다.</li>
+  <li><strong>파일의 형태:</strong> 앱이 따로 암호화하지 않은 JSON 파일이며, 그 계정의 보안과 해당 회사(Google · Microsoft)의 개인정보 처리방침이 적용됩니다.</li>
+  <li><strong>끄기와 지우기:</strong> 앱의 「연결 끊기」를 누르면 기기에 둔 토큰이 지워집니다. 클라우드의 파일은 Google Drive 설정의 「앱 관리」에서 이 앱의 숨겨진 데이터를 삭제하거나, OneDrive의 앱 폴더에서 파일을 지우면 삭제됩니다. 앱에 준 권한은 Google 계정 · Microsoft 계정의 보안 설정(연결된 앱)에서 언제든 거둘 수 있습니다.</li>
+  <li>Google 사용자 데이터의 사용과 전송은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>(제한적 사용 요구사항 포함)을 따릅니다.</li>
+</ul>
+
+<h2><span class="num">4.</span>AI 운세풀이 기능과 클립보드</h2>
 <p>
   이 앱의 "AI 운세풀이" 기능은 계산 값과 판독 기준을 담은 <strong>코드를 이용자의 클립보드에 복사</strong>할 뿐입니다.
   앱은 그 코드를 어떤 AI 서비스로도 보내지 않습니다. 이용자가 원할 때 직접 외부 AI 서비스에 붙여 넣는 것은
@@ -103,43 +118,44 @@
   이용자가 무엇을 어디에 붙여 넣는지 알 수 없습니다.
 </p>
 
-<h2><span class="num">4.</span>권한</h2>
+<h2><span class="num">5.</span>권한</h2>
 <p>
   앱은 개인정보에 접근하는 민감 권한(연락처·위치·사진·마이크·카메라 등)을 요구하지 않습니다.
   평생 이용권 구매 기능을 위해 Google Play 결제(인앱 결제) 연동을 사용하며, 결제 처리와 영수증 확인은
-  Google Play가 담당합니다.
+  Google Play가 담당합니다. 클라우드 저장에서 요청하는 권한의 범위는 3절에 적었습니다.
 </p>
 
-<h2><span class="num">5.</span>결제 정보</h2>
+<h2><span class="num">6.</span>결제 정보</h2>
 <p>
   평생 이용권은 <strong>Google Play 인앱 결제</strong>로만 판매됩니다. 카드번호 등 결제 수단 정보는
   Google이 처리하며 개발자는 이를 수집하거나 저장하지 않습니다. 결제·환불 관련 사항은 Google Play의
-  정책과 절차를 따릅니다.
+  정책과 절차를 따릅니다. 윈도우판은 Microsoft Store가 결제를 처리합니다.
 </p>
 
-<h2><span class="num">6.</span>데이터 보관과 삭제</h2>
+<h2><span class="num">7.</span>데이터 보관과 삭제</h2>
 <p>
-  앱이 다루는 모든 데이터는 기기 안에만 있으므로, 삭제도 전적으로 이용자의 통제 아래 있습니다.
+  앱이 다루는 데이터는 기기 안에 있고, 클라우드 저장을 켠 경우에는 이용자 본인 계정의 파일 하나가 더해집니다. 어느 쪽이든 삭제는 전적으로 이용자의 통제 아래 있습니다.
 </p>
 <ul>
   <li>앱 안에서 저장한 명식을 개별 삭제할 수 있습니다.</li>
   <li>기기 설정에서 앱 데이터를 지우면 저장된 모든 정보가 삭제됩니다.</li>
   <li>앱을 제거하면 기기에 보관된 관련 데이터가 함께 사라집니다.</li>
+  <li>클라우드에 저장한 파일은 3절의 방법으로 지울 수 있습니다.</li>
 </ul>
 
-<h2><span class="num">7.</span>만 14세 미만 아동</h2>
+<h2><span class="num">8.</span>만 14세 미만 아동</h2>
 <p>
   이 앱은 아동을 대상으로 설계되지 않았으며, 아동으로부터 어떠한 개인정보도 의도적으로 수집하지 않습니다.
   애초에 누구로부터도 개인정보를 수집하지 않습니다.
 </p>
 
-<h2><span class="num">8.</span>개인정보처리방침의 변경</h2>
+<h2><span class="num">9.</span>개인정보처리방침의 변경</h2>
 <p>
   내용이 바뀌면 이 문서를 갱신하고 상단의 "최종 개정" 날짜를 고칩니다. 중요한 변경이 있을 경우
   앱 또는 스토어 등록정보를 통해 알립니다.
 </p>
 
-<h2><span class="num">9.</span>문의</h2>
+<h2><span class="num">10.</span>문의</h2>
 <p>
   개인정보 처리에 관한 문의는 아래로 연락해 주세요.<br>
   <strong>Kim, Kyung Su (김경수)</strong> · <a href="mailto:gyibrush@gmail.com">gyibrush@gmail.com</a>
@@ -152,20 +168,21 @@
 <p class="meta">
   App: <strong>ℤ60 Tertius Interveniens</strong> · Package: <strong>com.kyungsukim.z60</strong><br>
   Developer: <strong>Kim, Kyung Su</strong> · Contact: <strong>gyibrush@gmail.com</strong><br>
-  Effective: <strong>October 15, 2026</strong> · Last updated: <strong>October 15, 2026</strong>
+  Effective: <strong>October 15, 2026</strong> · Last updated: <strong>November 3, 2026</strong>
 </p>
 <p>
   <strong>This app does not collect any personal data.</strong> All calculations happen entirely on your
   device, and the information you enter and the charts you save never leave your device or reach the developer.
+  If you turn on cloud save, that content is saved only to your own Google Drive or OneDrive (section 3).
 </p>
 
 <h2>1. At a glance</h2>
 <ul>
   <li><strong>Personal data collected:</strong> None. The developer does not collect, store, or transmit any of your personal data.</li>
-  <li><strong>Where processing happens:</strong> Entirely on your device. No data is sent to any external server.</li>
-  <li><strong>Third-party sharing:</strong> None.</li>
+  <li><strong>Where processing happens:</strong> On your device. Only if you turn on cloud save is data sent to the app-only folder of your own Google Drive or OneDrive (never through a developer server).</li>
+  <li><strong>Third-party sharing:</strong> None. Cloud save stores data in your own account, which you choose.</li>
   <li><strong>Ads / analytics:</strong> None. No advertising SDKs and no tracking or analytics tools are included.</li>
-  <li><strong>Payments:</strong> Not handled by the developer. The lifetime unlock is processed by Google Play.</li>
+  <li><strong>Payments:</strong> Not handled by the developer. The lifetime unlock is processed by the store (Google Play or Microsoft Store).</li>
   <li><strong>Children:</strong> Not directed to children (rated for an adult audience).</li>
 </ul>
 
@@ -173,7 +190,7 @@
 <p>
   ℤ60 Tertius Interveniens is a Korean Saju (four-pillars) calculation tool. When you enter your
   <strong>birth date and time, sex, and place</strong>, the app computes the natal chart and luck cycles.
-  The values you enter and the charts you save are stored <strong>only in your device's local storage.</strong>
+  The values you enter and the charts you save are stored <strong>in your device's local storage.</strong> If you turn on cloud save, see section 3.
 </p>
 <ul>
   <li>This information is <strong>never transmitted</strong> to the developer. The developer operates no server that receives data.</li>
@@ -181,45 +198,59 @@
   <li>Saved charts are removed when you delete them in the app or uninstall the app.</li>
 </ul>
 
-<h2>3. AI reading feature and the clipboard</h2>
+<h2>3. Cloud save (optional)</h2>
+<p>
+  From version 1.33.0, with the Lifetime pass, the Windows and Android apps can, only if you turn it on, save your saved charts,
+  family groups and calendar memos as a single file (<code>z60_myeong.json</code>) to <strong>your own Google Drive or OneDrive</strong>, which you choose, and load it on another device.
+</p>
+<ul>
+  <li><strong>Where it is stored:</strong> on Google Drive, the app-only data folder that is hidden from you and other apps; on OneDrive, this app's own folder under "Apps". The file travels only between your device and that account, <strong>never through a developer server</strong>, and the developer cannot see it.</li>
+  <li><strong>Permissions requested:</strong> only the app-only data folder scope from Google (drive.appdata) and the app-folder scope (Files.ReadWrite.AppFolder) plus staying signed in (offline_access) from Microsoft. The app cannot read or change your other files and does not receive your account's email or profile.</li>
+  <li><strong>Sign-in:</strong> you sign in on each company's own sign-in screen (the system browser or Google Play services); the app never receives your password. The tokens it receives, so you do not have to sign in again, are locked with the device's secure storage (Windows DPAPI, Android Keystore) and kept only on the device.</li>
+  <li><strong>File format:</strong> a JSON file that the app does not encrypt separately; the security of your account and the privacy policy of that company (Google or Microsoft) apply.</li>
+  <li><strong>Turning it off and deleting:</strong> "Disconnect" in the app removes the tokens kept on the device. To delete the file in the cloud, delete this app's hidden data under "Manage apps" in Google Drive settings, or delete the file in the app folder on OneDrive. You can revoke the app's access at any time in the security settings (connected apps) of your Google or Microsoft account.</li>
+  <li>The app's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+</ul>
+
+<h2>4. AI reading feature and the clipboard</h2>
 <p>
   The app's "AI reading" feature only <strong>copies a block of code to your clipboard</strong>. The app does
   not send this code to any AI service. If you choose to paste it into an external AI service yourself, that
   service's own privacy policy applies. The developer is not involved in that step and has no visibility into it.
 </p>
 
-<h2>4. Permissions</h2>
+<h2>5. Permissions</h2>
 <p>
   The app requests no sensitive permissions (contacts, location, photos, microphone, camera, etc.). It uses
-  Google Play Billing solely to offer the lifetime unlock; payment processing is handled by Google Play.
+  Google Play Billing solely to offer the lifetime unlock; payment processing is handled by Google Play. The permissions requested for cloud save are described in section 3.
 </p>
 
-<h2>5. Payments</h2>
+<h2>6. Payments</h2>
 <p>
   The lifetime unlock is sold exclusively through <strong>Google Play in-app billing</strong>. Payment details
   such as card numbers are handled by Google; the developer does not collect or store them. Purchases and
-  refunds follow Google Play's policies.
+  refunds follow Google Play's policies. In the Windows version, payment is handled by Microsoft Store.
 </p>
 
-<h2>6. Data retention and deletion</h2>
+<h2>7. Data retention and deletion</h2>
 <p>
-  Because all data stays on your device, deletion is entirely under your control: delete saved charts in the
-  app, clear the app's data in system settings, or uninstall the app to remove all related data.
+  The data stays on your device, plus one file in your own account if you turn on cloud save; either way, deletion is entirely under your control: delete saved charts in the
+  app, clear the app's data in system settings, or uninstall the app to remove all related data on the device, and delete the cloud file as described in section 3.
 </p>
 
-<h2>7. Children</h2>
+<h2>8. Children</h2>
 <p>
   This app is not designed for children and does not knowingly collect personal data from children — it does
   not collect personal data from anyone.
 </p>
 
-<h2>8. Changes to this policy</h2>
+<h2>9. Changes to this policy</h2>
 <p>
   If this policy changes, this document will be updated and the "Last updated" date above revised. Material
   changes will be announced through the app or the store listing.
 </p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
 <p>
   For privacy questions, contact <strong>Kim, Kyung Su</strong> at
   <a href="mailto:gyibrush@gmail.com">gyibrush@gmail.com</a>.
