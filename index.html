@@ -70,15 +70,15 @@
   <p class="lede">
     이 앱은 개인정보를 <strong>수집하지 않습니다.</strong> 모든 계산은 이용자의 기기 안에서만 이루어지며,
     입력한 정보와 저장한 명식(命式)은 기기를 벗어나 개발자에게 전송되지 않습니다.
-    이용자가 클라우드 저장을 켜면 그 내용은 이용자 본인의 Google Drive 또는 OneDrive로만 저장됩니다(3절).
+    이용자가 클라우드 저장을 켜면 그 내용은 이용자 본인의 Google Drive로만 저장됩니다(3절).
   </p>
 </header>
 
 <h2><span class="num">1.</span>한눈에 보기</h2>
 <table class="table">
   <tr><th>수집하는 개인정보</th><td>없음. 개발자는 이용자의 어떤 개인정보도 수집·저장·전송하지 않습니다.</td></tr>
-  <tr><th>데이터 처리 위치</th><td>기기 내부. 이용자가 클라우드 저장을 켠 경우에만 이용자 본인의 Google Drive · OneDrive 앱 전용 폴더로 보냅니다(개발자 서버는 거치지 않음).</td></tr>
-  <tr><th>제3자 공유</th><td>없음. 클라우드 저장은 이용자가 고른 이용자 본인 계정에 저장하는 것입니다.</td></tr>
+  <tr><th>데이터 처리 위치</th><td>기기 내부. 이용자가 클라우드 저장을 켠 경우에만 이용자 본인의 Google Drive 앱 전용 폴더로 보냅니다(개발자 서버는 거치지 않음).</td></tr>
+  <tr><th>제3자 공유</th><td>없음. 클라우드 저장은 이용자 본인의 Google 계정에 저장하는 것입니다.</td></tr>
   <tr><th>광고·분석 도구</th><td>없음. 광고 SDK, 추적·분석 도구를 넣지 않았습니다.</td></tr>
   <tr><th>결제 정보</th><td>개발자가 다루지 않음. 평생 이용권 결제는 스토어(Google Play · Microsoft Store)가 처리합니다.</td></tr>
   <tr><th>만 14세 미만</th><td>아동을 대상으로 하지 않는 앱입니다(이용 등급 성인 대상).</td></tr>
@@ -99,14 +99,14 @@
 <h2><span class="num">3.</span>클라우드 저장(선택 기능)</h2>
 <p>
   1.33.0부터 평생 이용권의 윈도우 · 안드로이드 앱에서는 이용자가 직접 켜는 경우에 한해, 저장된 명식 · 가족 묶음 · 캘린더 메모를
-  이용자가 고른 <strong>이용자 본인의 Google Drive 또는 OneDrive</strong>에 파일 하나(<code>z60_myeong.json</code>)로 저장하고 다른 기기에서 불러올 수 있습니다.
+  <strong>이용자 본인의 Google Drive</strong>에 파일 하나(<code>z60_myeong.json</code>)로 저장하고 다른 기기에서 불러올 수 있습니다.
 </p>
 <ul>
-  <li><strong>저장되는 곳:</strong> Google Drive는 이용자와 다른 앱에 보이지 않는 앱 전용 데이터 폴더, OneDrive는 「앱」 폴더 아래의 이 앱 전용 폴더입니다. 파일은 기기와 그 계정 사이에서만 오가며 <strong>개발자 서버를 거치지 않고</strong>, 개발자는 그 파일을 볼 수 없습니다.</li>
-  <li><strong>요청하는 권한:</strong> Google에는 앱 전용 데이터 폴더 권한(drive.appdata), Microsoft에는 앱 전용 폴더 권한(Files.ReadWrite.AppFolder)과 로그인 유지(offline_access)만 요청합니다. 앱은 이용자의 다른 파일을 읽거나 바꿀 수 없고, 계정의 이메일이나 프로필도 받지 않습니다.</li>
-  <li><strong>로그인 정보:</strong> 로그인은 각 회사의 로그인 화면(시스템 브라우저 또는 Google Play 서비스)에서 이루어지며, 앱은 비밀번호를 받지 않습니다. 다시 로그인하지 않아도 되도록 받은 토큰은 기기의 보안 저장소(윈도우 DPAPI · 안드로이드 키 저장소)로 잠가 기기 안에만 둡니다.</li>
-  <li><strong>파일의 형태:</strong> 앱이 따로 암호화하지 않은 JSON 파일이며, 그 계정의 보안과 해당 회사(Google · Microsoft)의 개인정보 처리방침이 적용됩니다.</li>
-  <li><strong>끄기와 지우기:</strong> 앱의 「연결 끊기」를 누르면 기기에 둔 토큰이 지워집니다. 클라우드의 파일은 Google Drive 설정의 「앱 관리」에서 이 앱의 숨겨진 데이터를 삭제하거나, OneDrive의 앱 폴더에서 파일을 지우면 삭제됩니다. 앱에 준 권한은 Google 계정 · Microsoft 계정의 보안 설정(연결된 앱)에서 언제든 거둘 수 있습니다.</li>
+  <li><strong>저장되는 곳:</strong> Google Drive 안에서 이용자와 다른 앱에 보이지 않는 앱 전용 데이터 폴더입니다. 파일은 기기와 그 계정 사이에서만 오가며 <strong>개발자 서버를 거치지 않고</strong>, 개발자는 그 파일을 볼 수 없습니다.</li>
+  <li><strong>요청하는 권한:</strong> Google에 앱 전용 데이터 폴더 권한(drive.appdata)만 요청합니다. 앱은 이용자의 다른 파일을 읽거나 바꿀 수 없고, 계정의 이메일이나 프로필도 받지 않습니다.</li>
+  <li><strong>로그인 정보:</strong> 로그인은 Google의 로그인 화면(윈도우에서는 시스템 브라우저, 안드로이드에서는 Google Play 서비스)에서 이루어지며, 앱은 비밀번호를 받지 않습니다. 다시 로그인하지 않아도 되도록 받은 토큰은 기기의 보안 저장소(윈도우 DPAPI · 안드로이드 키 저장소)로 잠가 기기 안에만 둡니다.</li>
+  <li><strong>파일의 형태:</strong> 앱이 따로 암호화하지 않은 JSON 파일이며, 그 계정의 보안과 Google의 개인정보 처리방침이 적용됩니다.</li>
+  <li><strong>끄기와 지우기:</strong> 앱의 「연결 끊기」를 누르면 기기에 둔 토큰이 지워집니다. 클라우드의 파일은 Google Drive 설정의 「앱 관리」에서 이 앱의 숨겨진 데이터를 삭제하면 지워집니다. 앱에 준 권한은 Google 계정의 보안 설정(연결된 앱)에서 언제든 거둘 수 있습니다.</li>
   <li>Google 사용자 데이터의 사용과 전송은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>(제한적 사용 요구사항 포함)을 따릅니다.</li>
 </ul>
 
@@ -173,14 +173,14 @@
 <p>
   <strong>This app does not collect any personal data.</strong> All calculations happen entirely on your
   device, and the information you enter and the charts you save never leave your device or reach the developer.
-  If you turn on cloud save, that content is saved only to your own Google Drive or OneDrive (section 3).
+  If you turn on cloud save, that content is saved only to your own Google Drive (section 3).
 </p>
 
 <h2>1. At a glance</h2>
 <ul>
   <li><strong>Personal data collected:</strong> None. The developer does not collect, store, or transmit any of your personal data.</li>
-  <li><strong>Where processing happens:</strong> On your device. Only if you turn on cloud save is data sent to the app-only folder of your own Google Drive or OneDrive (never through a developer server).</li>
-  <li><strong>Third-party sharing:</strong> None. Cloud save stores data in your own account, which you choose.</li>
+  <li><strong>Where processing happens:</strong> On your device. Only if you turn on cloud save is data sent to the app-only folder of your own Google Drive (never through a developer server).</li>
+  <li><strong>Third-party sharing:</strong> None. Cloud save stores data in your own Google account.</li>
   <li><strong>Ads / analytics:</strong> None. No advertising SDKs and no tracking or analytics tools are included.</li>
   <li><strong>Payments:</strong> Not handled by the developer. The lifetime unlock is processed by the store (Google Play or Microsoft Store).</li>
   <li><strong>Children:</strong> Not directed to children (rated for an adult audience).</li>
@@ -201,14 +201,14 @@
 <h2>3. Cloud save (optional)</h2>
 <p>
   From version 1.33.0, with the Lifetime pass, the Windows and Android apps can, only if you turn it on, save your saved charts,
-  family groups and calendar memos as a single file (<code>z60_myeong.json</code>) to <strong>your own Google Drive or OneDrive</strong>, which you choose, and load it on another device.
+  family groups and calendar memos as a single file (<code>z60_myeong.json</code>) to <strong>your own Google Drive</strong> and load it on another device.
 </p>
 <ul>
-  <li><strong>Where it is stored:</strong> on Google Drive, the app-only data folder that is hidden from you and other apps; on OneDrive, this app's own folder under "Apps". The file travels only between your device and that account, <strong>never through a developer server</strong>, and the developer cannot see it.</li>
-  <li><strong>Permissions requested:</strong> only the app-only data folder scope from Google (drive.appdata) and the app-folder scope (Files.ReadWrite.AppFolder) plus staying signed in (offline_access) from Microsoft. The app cannot read or change your other files and does not receive your account's email or profile.</li>
-  <li><strong>Sign-in:</strong> you sign in on each company's own sign-in screen (the system browser or Google Play services); the app never receives your password. The tokens it receives, so you do not have to sign in again, are locked with the device's secure storage (Windows DPAPI, Android Keystore) and kept only on the device.</li>
-  <li><strong>File format:</strong> a JSON file that the app does not encrypt separately; the security of your account and the privacy policy of that company (Google or Microsoft) apply.</li>
-  <li><strong>Turning it off and deleting:</strong> "Disconnect" in the app removes the tokens kept on the device. To delete the file in the cloud, delete this app's hidden data under "Manage apps" in Google Drive settings, or delete the file in the app folder on OneDrive. You can revoke the app's access at any time in the security settings (connected apps) of your Google or Microsoft account.</li>
+  <li><strong>Where it is stored:</strong> the app-only data folder in Google Drive, which is hidden from you and other apps. The file travels only between your device and that account, <strong>never through a developer server</strong>, and the developer cannot see it.</li>
+  <li><strong>Permissions requested:</strong> only the app-only data folder scope (drive.appdata) from Google. The app cannot read or change your other files and does not receive your account's email or profile.</li>
+  <li><strong>Sign-in:</strong> you sign in on Google's own sign-in screen (the system browser on Windows, Google Play services on Android); the app never receives your password. The tokens it receives, so you do not have to sign in again, are locked with the device's secure storage (Windows DPAPI, Android Keystore) and kept only on the device.</li>
+  <li><strong>File format:</strong> a JSON file that the app does not encrypt separately; the security of your account and Google's privacy policy apply.</li>
+  <li><strong>Turning it off and deleting:</strong> "Disconnect" in the app removes the tokens kept on the device. To delete the file in the cloud, delete this app's hidden data under "Manage apps" in Google Drive settings. You can revoke the app's access at any time in the security settings (connected apps) of your Google account.</li>
   <li>The app's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
 </ul>
 
